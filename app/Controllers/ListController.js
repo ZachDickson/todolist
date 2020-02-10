@@ -28,7 +28,8 @@ export default class ListController {
 
     let newList = {
       title: formData.listTitle.value,
-      // tasks: formData.tasks.value
+      tasks: formData.tasks.value
+
     }
     _drawLists()
 
