@@ -12,6 +12,7 @@ function _drawLists() {
   })
 
   listsElem.innerHTML = template
+  store.saveState()
 }
 
 //Public
@@ -34,6 +35,7 @@ export default class ListController {
     console.log(newList)
     ListService.addList(newList)
     _drawLists()
+
 
   }
 
