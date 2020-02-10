@@ -33,7 +33,6 @@ export default class ListController {
     }
     console.log(newList)
     ListService.addList(newList)
-    formData.reset()
     _drawLists()
 
   }

@@ -7,7 +7,7 @@ class ListService {
   addList(newList) {
     newList = new List(newList)
     store.State.lists.push(newList)
-    console.log(store.State.cars)
+    console.log(store.State.lists)
   }
   //TODO  Here is where we handle all of our business logic,
   //given the information you need in the controller,
