@@ -31,9 +31,11 @@ export default class ListController {
       tasks: formData.tasks.value
 
     }
+    console.log(newList)
+    ListService.addList(newList)
+    formData.reset()
     _drawLists()
 
-    console.log(newList)
   }
 
   //TODO: Your app will need the ability to create, and delete both lists and listItems
