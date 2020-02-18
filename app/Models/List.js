@@ -19,8 +19,8 @@ export default class List {
                   </div>
                   
                   <button type="submit" class="btn btn-dark">Create Task</button>
+                  </form>
                   <button onclick="app.listController.deleteList('${this.id}')" class="btn btn-danger">Delete List</button>
-                </form>
             </div>
     `
   }

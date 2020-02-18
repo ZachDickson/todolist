@@ -48,7 +48,6 @@ export default class ListController {
     console.log(newList)
     ListService.addList(newList)
     _drawLists()
-    _drawTasks()
 
 
   }
