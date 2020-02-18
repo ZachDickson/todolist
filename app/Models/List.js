@@ -15,11 +15,12 @@ export default class List {
                 </form>
                 <form onsubmit="app.listController.addTask(event)">
                   <div class="form-group">
-                    <textarea class="form-control" rows="1" placeholder="Add some tasks!"></textarea>
+                    <textarea id="tasks" class="form-control" rows="1" placeholder="Add some tasks!"></textarea>
                   </div>
+                  
                   <button type="submit" class="btn btn-dark">Create Task</button>
                 </form>
-                <h3 id="tasks"> <button onclick="app.listController.deleteList('${this.id}')" class="btn btn-danger">Delete</button></h3>
+           <button onclick="app.listController.deleteList('${this.id}')" class="btn btn-danger">Delete List</button>
             </div>
     `
   }

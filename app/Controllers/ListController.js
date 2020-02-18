@@ -17,7 +17,7 @@ function _drawLists() {
 
 function _drawTasks() {
   let task = store.State.lists
-  let taskElem = document.getElementById("tasks")
+  let taskElem = document.getElementById("current-tasks")
   let template = ""
 
   task.forEach(t => {
@@ -58,13 +58,13 @@ export default class ListController {
 
     let formData = event.target
 
-    let newList = {
+    let newTask = {
       tasks: formData.tasks.value
 
     }
-    console.log(newList)
-    ListService.addList(newList)
-    _drawLists()
+    console.log(newTask)
+    ListService.addList(newTask)
+    _drawTasks()
 
 
   }

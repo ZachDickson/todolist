@@ -14,6 +14,11 @@ class ListService {
     store.State.lists.push(newList)
     console.log(store.State.lists)
   }
+
+  addTask(newTask) {
+    newTask = new List(newTask)
+    store.State.lists.push(newTask)
+  }
   //TODO  Here is where we handle all of our business logic,
   //given the information you need in the controller,
   //what methods will you need to do when this class is first 'constructed'?
