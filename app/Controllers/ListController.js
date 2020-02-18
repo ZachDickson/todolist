@@ -8,10 +8,23 @@ function _drawLists() {
   let template = ""
 
   lists.forEach(list => {
-    template += list.Template
+    template += list.listTemplate
   })
 
   listsElem.innerHTML = template
+  store.saveState()
+}
+
+function _drawTasks() {
+  let task = store.State.lists
+  let taskElem = document.getElementById("tasks")
+  let template = ""
+
+  task.forEach(t => {
+    template += t.taskTemplate
+  })
+
+  taskElem.innerHTML = template
   store.saveState()
 }
 
@@ -20,6 +33,7 @@ export default class ListController {
   constructor() {
     //NOTE: After the store loads, we can automatically call to draw the lists.
     _drawLists();
+    _drawTasks()
   }
 
   addList(event) {
@@ -28,7 +42,23 @@ export default class ListController {
     let formData = event.target
 
     let newList = {
-      title: formData.listTitle.value,
+      listTitle: formData.listTitle.value
+
+    }
+    console.log(newList)
+    ListService.addList(newList)
+    _drawLists()
+    _drawTasks()
+
+
+  }
+
+  addTask(event) {
+    event.preventDefault()
+
+    let formData = event.target
+
+    let newList = {
       tasks: formData.tasks.value
 
     }
@@ -37,6 +67,10 @@ export default class ListController {
     _drawLists()
 
 
+  }
+  deleteList(id) {
+    ListService.deleteList(id)
+    _drawLists()
   }
 
   //TODO: Your app will need the ability to create, and delete both lists and listItems

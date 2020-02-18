@@ -3,6 +3,11 @@ import store from "../store.js"
 
 //Public
 class ListService {
+  deleteList(id) {
+    let lists = store.State.lists.filter(l => l.id !== id)
+    store.State.lists = lists
+    store.saveState()
+  }
 
   addList(newList) {
     newList = new List(newList)

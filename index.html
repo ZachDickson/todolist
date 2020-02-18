@@ -23,18 +23,13 @@
           <form onsubmit="app.listController.addList(event)">
             <div class="form-group">
               <label for="listTitle">List Title</label>
-              <input type="text" class="form-control" id="listTitle" placeholder="Title...">
+              <input type="text" name="listTitle" class="form-control" id="listTitle" placeholder="Title...">
+              <button type="submit" class="btn btn-dark">Creat list</button>
             </div>
-            <div class="form-group">
-              <label for="tasks">Add Tasks!</label>
-              <textarea class="form-control" id="tasks" rows="6" placeholder="Add some tasks!"></textarea>
-            </div>
-            <button type="submit" class="btn btn-dark">Create list</button>
-          </form>
         </div>
       </div>
       <div class="row" id="lists">
-
+        <div class="col" id="current-tasks"></div>
       </div>
     </div>
   </header>

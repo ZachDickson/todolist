@@ -8,14 +8,27 @@ export default class List {
     this.id = data.id || generateId();
   }
 
-  get Template() {
-    return `
+  get listTemplate() {
+    return /*html*/ `
             <div class="col-3">
                 <h1>${this.listTitle}</h1>
-                <H2>${this.tasks}</h1>
-                
+                </form>
+                <form onsubmit="app.listController.addTask(event)">
+                  <div class="form-group">
+                    <textarea class="form-control" rows="1" placeholder="Add some tasks!"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-dark">Create Task</button>
+                </form>
+                <h3 id="tasks"> <button onclick="app.listController.deleteList('${this.id}')" class="btn btn-danger">Delete</button></h3>
             </div>
     `
+  }
+
+  get taskTemplate() {
+    return /*html*/ `
+    <h3>${this.tasks}</h3>
+`
+
   }
   //Be sure to add the methods needed to create the view template for this model
   //For starting out, your tasks may be strings alone, but later you may wish to turn them into full objects, that will be up to you
